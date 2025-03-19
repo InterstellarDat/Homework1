@@ -13,4 +13,6 @@ int main() {
 	int n;
 	cin >> n;
 	generateBinaryStrings(n, "");
+	
+	return 0;
 }

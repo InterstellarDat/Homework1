@@ -22,4 +22,6 @@ int main() {
 		cout << "The array is sorted";
 	} else
 		cout << "The array is NOT sorted";
+	
+	return 0;
 }
