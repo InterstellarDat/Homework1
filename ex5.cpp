@@ -15,7 +15,7 @@ int main() {
 	int n, a[100];
 	cout << "Enter n: "; cin >> n;
 	for (int i = 0; i < n; i++) {
-		cout << "Enter element " << i << " : "; cin >> a[i];
+		cout << "Enter element " << i << ": "; cin >> a[i];
 	}
 	
 	if (isSorted(a, n)) {
