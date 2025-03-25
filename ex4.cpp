@@ -1,20 +1,23 @@
 #include <iostream>
 using namespace std;
 
-void towerOfHanoi (int n, char from_rod, char to_rod, char aux_rod) {
-	if (n == 0)
-		return;
-	
-	towerOfHanoi(n - 1, from_rod, aux_rod, to_rod);
-	cout << "Move disk " << n << " from rod " << from_rod << " to rod " << to_rod << endl;
-	towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);
+// Recursive function to solve Towers of Hanoi
+void towerOfHanoi(int n, char from_rod, char to_rod, char aux_rod) {
+    if (n == 1) {                   // Base case: only one disk to move
+        cout << "Move disk 1 from " << from_rod << " to " << to_rod << endl;
+        return;
+    }
+    // Move n-1 disks from source to auxiliary rod
+    towerOfHanoi(n - 1, from_rod, aux_rod, to_rod);
+    // Move the nth disk from source to target rod
+    cout << "Move disk " << n << " from " << from_rod << " to " << to_rod << endl;
+    // Move n-1 disks from auxiliary to target rod
+    towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);
 }
 
 int main() {
-	int n;
-	cout << "Enter n: "; cin >> n;
-	cout << "Move entire stack from A to C using B\n---------------------------\n";
-	towerOfHanoi(n, 'A', 'C', 'B');
-	
-	return 0;
+    int n;
+    cin >> n;                       // Read number of disks
+    towerOfHanoi(n, 'A', 'C', 'B'); // Solve with rods A (source), C (target), B (auxiliary)
+    return 0;
 }

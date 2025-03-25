@@ -1,16 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int factorial (int n) {
-	if (n == 1) return 1;
-	
-	return factorial(n - 1) * n;
+// Recursive function to compute factorial
+int factorial(int n) {
+    if (n == 0) return 1;           // Base case: 0! = 1
+    return n * factorial(n - 1);    // Recursive case: n! = n * (n-1)!
 }
 
 int main() {
-	int n;
-	cin >> n;
-	cout << factorial(n);
-	
-	return 0;
+    int n;
+    cin >> n;                       // Read input
+    cout << factorial(n) << endl;   // Output result
+    return 0;
 }
